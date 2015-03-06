@@ -69,15 +69,24 @@ PHT.Linear = {
  */
 PHT.prototype.get = function(key) {
   var index = this.strategy.find.call(this, key);
-  if (index === false) return null;
+  if (index === false) return undefined;
   return this.arr[index][1];
 };
 
 /**
- * Puts a value
+ * Puts a key/value
  */
 PHT.prototype.put = function(key, value) {
   var index = this.strategy.probe.call(this, key);
   if (index === false) throw new Error('Map is full');
   this.arr[index] = [key, value];
+};
+
+/**
+ * Removes a key.
+ */
+PHT.prototype.remove = function(key, value) {
+  var index = this.strategy.find.call(this, key);
+  if (index === false) return null;
+  this.arr[index] = undefined;
 };

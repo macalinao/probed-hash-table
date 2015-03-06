@@ -17,5 +17,13 @@ describe('probed-hash-table', function() {
 
     ht.put('test', 12);
     expect(ht.get('test')).to.equal(12);
+
+    ht.remove('test');
+    ht.remove('testa');
+
+    expect(ht.get('test')).to.equal(undefined);
+    expect(ht.get('testa')).to.equal(undefined);
+    expect(ht.get('testar')).to.equal(20);
+    expect(ht.get('testin')).to.equal(14);
   });
 });
