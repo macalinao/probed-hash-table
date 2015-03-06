@@ -1,0 +1,22 @@
+{
+  "name": "probed-hash-table",
+  "description": "Hash table implementing probing for lookup in Node.js",
+  "version": "0.0.0",
+  "dependencies": {},
+  "author": "Ian Macalinao <me@ian.pw>",
+  "repository": "simplyianm/probed-hash-table",
+  "license": "MIT",
+  "keywords": [
+    "probed-hash-table",
+    "hash",
+    "table",
+    "probe"
+  ],
+  "scripts": {
+    "test": "./node_modules/.bin/mocha -R spec"
+  },
+  "devDependencies": {
+    "chai": "^1.10.0",
+    "mocha": "^2.1.0"
+  }
+}
